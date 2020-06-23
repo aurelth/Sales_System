@@ -37,7 +37,8 @@ namespace SalesWebSystemMvc
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<SalesWebSystemMvcContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebSystemMvcContext")));
+                    options.UseMySql(Configuration.GetConnectionString("SalesWebSystemMvcContext"), builder => 
+                        builder.MigrationsAssembly("SalesWebSystemMvc")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
