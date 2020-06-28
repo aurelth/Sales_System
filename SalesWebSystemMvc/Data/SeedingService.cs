@@ -18,15 +18,15 @@ namespace SalesWebSystemMvc.Data
 
         public void Seed()
         {
-            if(_context.Department.Any() || _context.Seller.Any() || _context.SalesRecord.Any())
+            if (_context.Department.Any() || _context.Seller.Any() || _context.SalesRecord.Any())
             {
                 return;
             }
 
-            Department d1 = new Department(1, "Computers");
-            Department d2 = new Department(2, "Electronics");
-            Department d3 = new Department(3, "Fashion");
-            Department d4 = new Department(4, "Books");
+            Department d1 = new Department {Id = 1, Name = "Computers" };
+            Department d2 = new Department {Id = 2, Name = "Electronics" };
+            Department d3 = new Department {Id = 3, Name = "Fashion" };
+            Department d4 = new Department {Id = 4, Name = "Books"};
 
             Seller s1 = new Seller(1, "Bob Brown", "bob@gmail.com", new DateTime(1998, 4, 21), 1000.0, d1);
             Seller s2 = new Seller(2, "Maria Green", "maria@gmail.com", new DateTime(1979, 12, 31), 3500.0, d2);
