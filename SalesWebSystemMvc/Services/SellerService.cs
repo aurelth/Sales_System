@@ -18,10 +18,9 @@ namespace SalesWebSystemMvc.Services
             _context = context;
         }
 
-        public List<Seller> FindAll()
-        {
-            return _context.Seller.ToList();
-        }
+        public List<Seller> FindAll()        
+            => _context.Seller.ToList();
+        
 
         public void InsertDB(Seller obj)
         {            
@@ -30,9 +29,7 @@ namespace SalesWebSystemMvc.Services
         }
 
         public Seller FindById(int id)
-        {
-            return _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);
-        }
+            => _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);        
 
         public void Remove(int id)
         {
