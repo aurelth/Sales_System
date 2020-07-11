@@ -131,7 +131,7 @@ namespace SalesWebSystemMvc.Controllers
 
             if (id != seller.Id)
             {
-                return RedirectToAction(nameof(Error), new { message = "Id not mismatch" });
+                return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
             }
             try
             {
